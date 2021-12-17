@@ -17,3 +17,7 @@ Reproducing kafka producer error that causing the stream to break
 
 Note: We are able to get hold of the exception thrown in Hooks.onErrorDropped. But this does not help as once the exception is thrown, the dispatcher no more has a subscriber and even if the topic is recreated, the messages are not consumed by the aggregate function.
 Unless application is restarted, we are not able to recover from this.
+
+
+
+Added a generated log file into the project as well for reference: log_with_stream_break.log
