@@ -14,3 +14,18 @@ spring:
       kafka:
         binder:
           brokers: localhost:9094
+management:
+  server:
+    port: 8490
+logging:
+  level:
+    root: INFO
+    com.intuit.fdp.enrichment: DEBUG
+    org.springframework: ERROR
+    com.intuit.platform.jsk.config.client.idps: DEBUG
+    reactor.netty: ERROR
+  file:
+    name: log_with_stream_break.log
+  pattern:
+    console: "%d{yyyy-MM-dd|HH:mm:ss.SSS} %-5level %logger{36} - intuit_tid=%X{intuit_tid} provider_id=%X{provider_id} entity_type=%X{entity_type} %msg%n"
+    file: "%d %-5level [%thread] %logger{0} : %msg%n"
