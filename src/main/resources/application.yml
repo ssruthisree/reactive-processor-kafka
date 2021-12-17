@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    stream:
+      function.definition: aggregate;testSource;
+      bindings:
+        aggregate-out-0:
+          destination: transform
+          producer:
+            error-channel-enabled: true
+        aggregate-in-0:
+          destination: testtock
+        testSource-out-0:
+          destination: testtock
+      kafka:
+        binder:
+          brokers: localhost:9094

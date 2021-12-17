@@ -55,7 +55,7 @@ public class ReactiveProcessorApplication {
 
     // .onErrorContinue((err, i) -> {log.info("log for onErrorContinue={} invoke retry service here", i);});
   }
-  
+
   @Bean
   public Function<Flux<String>, Flux<String>> aggregateWithInner() {
     return inbound ->
